@@ -18,7 +18,7 @@ const listTasks = [
   },
 ];
 
-function renderTasks() {
+const renderTasks = () => {
   const taskList = document.querySelector('#task-list');
 
   listTasks.forEach((task, index) => {
@@ -44,6 +44,6 @@ function renderTasks() {
       taskList.appendChild(horizontalRule);
     }
   });
-}
+};
 
 renderTasks();
