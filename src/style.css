@@ -35,6 +35,10 @@ ul li {
   display: flex;
 }
 
+p {
+  padding-left: 4%;
+}
+
 .card-head p {
   width: 80%;
   font-size: 20px;
@@ -45,10 +49,6 @@ span {
   width: 5%;
   text-align: right;
   margin-top: 2%;
-}
-
-p {
-  padding-left: 4%;
 }
 
 .refresh {

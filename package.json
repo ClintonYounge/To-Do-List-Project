@@ -1,5 +1,5 @@
 {
-  "name": "webpack-repo",
+  "name": "to-do-list-project",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ClintonYounge/Webpack-Repo.git"
+    "url": "git+https://github.com/ClintonYounge/To-Do-List-Project.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ClintonYounge/Webpack-Repo/issues"
+    "url": "https://github.com/ClintonYounge/To-Do-List-Project/issues"
   },
-  "homepage": "https://github.com/ClintonYounge/Webpack-Repo#readme",
+  "homepage": "https://github.com/ClintonYounge/To-Do-List-Project/blob/List-Structure-Branch/readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.3",
