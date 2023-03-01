@@ -1,7 +1,83 @@
-.hello {
-  color: red;
+* {
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
 }
 
 body {
-  background-color: bisque;
+  background-color: whitesmoke;
+  width: 100%;
+}
+
+.todo-card {
+  width: 80%;
+  margin: auto;
+  margin-top: 10%;
+  height: 60%;
+  background-color: white;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+ul {
+  justify-content: space-between;
+  width: 100%;
+}
+
+ul li {
+  display: flex;
+  width: 97%;
+  margin: auto;
+  margin-left: -2%;
+}
+
+.card-head {
+  width: 100%;
+  display: flex;
+}
+
+.card-head p {
+  width: 80%;
+  font-size: 20px;
+  padding-top: 2%;
+}
+
+span {
+  width: 5%;
+  text-align: right;
+  margin-top: 2%;
+}
+
+p {
+  padding-left: 4%;
+}
+
+.refresh {
+  margin-left: 14%;
+  margin-top: 5%;
+}
+
+.list-hr {
+  width: auto;
+  margin: auto;
+  margin-left: -40px;
+}
+
+.task-desc {
+  width: 100%;
+}
+
+.clear-completed {
+  font-size: 18px;
+  width: 80%;
+  margin: 2% auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  cursor: pointer;
+}
+
+.addTo {
+  font-style: italic;
+  opacity: 60%;
 }
