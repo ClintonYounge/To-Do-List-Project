@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Mynerve&display=swap');
+
 * {
   box-sizing: border-box;
   list-style-type: none;
   text-decoration: none;
   list-style: none;
+  font-family: 'Mynerve', cursive;
 }
 
 body {
