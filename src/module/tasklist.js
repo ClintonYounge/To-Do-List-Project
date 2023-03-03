@@ -1,5 +1,5 @@
 const taskList = document.querySelector('#task-list');
-let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
 // Save tasks to local storage
 function saveTasks() {
@@ -15,14 +15,14 @@ export function renderTasks() {
     checkbox.classList.add('checkboxes');
     const taskDescription = document.createElement('span');
     taskDescription.classList.add('task-desc');
-    const deleteButton = document.createElement('button');
+    const deleteButton = document.createElement('span');
 
     deleteButton.classList.add('delete-task-button');
 
     checkbox.setAttribute('type', 'checkbox');
     checkbox.checked = task.completed;
     taskDescription.innerText = task.description;
-    deleteButton.innerText = 'Delete';
+    deleteButton.innerHTML = '<i class="fas fa-trash"></i>';
 
     taskItem.appendChild(checkbox);
     taskItem.appendChild(taskDescription);
@@ -32,6 +32,8 @@ export function renderTasks() {
     // Add event listeners for checkbox, delete button, and double-click on task description
     checkbox.addEventListener('change', () => {
       task.completed = !task.completed;
+
+      taskItem.classList.toggle('completed', task.completed);
       saveTasks();
     });
 
@@ -43,7 +45,7 @@ export function renderTasks() {
 
     taskDescription.addEventListener('dblclick', () => {
       const input = document.createElement('input');
-      input.type = 'text';
+      input.classList.add('edit-desc');
       input.value = task.description;
       taskDescription.replaceWith(input);
       input.focus();
@@ -64,13 +66,6 @@ export function addTask(description) {
     completed: false,
     index: tasks.length,
   });
-  saveTasks();
-  renderTasks();
-}
-
-// Delete all checked tasks
-export function deleteCheckedTasks() {
-  tasks = tasks.filter((task) => !task.completed);
   saveTasks();
   renderTasks();
 }

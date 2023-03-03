@@ -31,10 +31,11 @@ body {
   width: 120%;
   margin: auto;
   margin-left: -8%;
-  height: 40px;
-  border-bottom: 1px solid grey;
+  height: auto;
+  min-height: 40px;
+  border-top: 1px solid grey;
   overflow: hidden;
-  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 #delete-checked-tasks-button {
@@ -70,7 +71,8 @@ input::placeholder {
 .delete-task-button {
   height: 20px;
   margin: auto;
-  margin-right: 5%
+  margin-right: 5%;
+  cursor: pointer;
 }
 
 h1 {
@@ -79,4 +81,12 @@ h1 {
   display: flex;
   width: 110%;
   justify-content: space-between;
+}
+
+.edit-desc {
+  width: 80%;
+}
+
+.completed .task-desc {
+  text-decoration: line-through;
 }
