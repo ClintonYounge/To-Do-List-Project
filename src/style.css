@@ -2,9 +2,9 @@
 
 * {
   box-sizing: border-box;
+  list-style: none;
   list-style-type: none;
   text-decoration: none;
-  list-style: none;
   font-family: 'Mynerve', cursive;
 }
 
@@ -52,7 +52,6 @@ body {
 .task-desc {
   margin: auto;
   width: 100%;
-  margin: auto;
   margin-left: -1%;
 }
 
