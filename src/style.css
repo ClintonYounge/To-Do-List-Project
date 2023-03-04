@@ -92,3 +92,11 @@ h1 {
 .completed .task-desc {
   text-decoration: line-through;
 }
+
+button {
+  cursor: pointer;
+}
+
+i {
+  cursor: pointer;
+}

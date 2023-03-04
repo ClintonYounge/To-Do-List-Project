@@ -1,7 +1,8 @@
-import { renderTasks, addTask } from './module/tasklist.js';
+import { renderTasks, addTask, deleteCheckedTasks } from './module/tasklist.js';
 import './style.css';
 
 const taskForm = document.querySelector('#task-form');
+const deleteCheckedTasksButton = document.querySelector('#delete-checked-tasks-button');
 
 // Handle form submission
 taskForm.addEventListener('submit', (event) => {
@@ -12,6 +13,11 @@ taskForm.addEventListener('submit', (event) => {
     addTask(description);
     newTaskInput.value = '';
   }
+});
+
+// Handle delete checked tasks button click
+deleteCheckedTasksButton.addEventListener('click', () => {
+  deleteCheckedTasks();
 });
 
 // Render tasks on page load

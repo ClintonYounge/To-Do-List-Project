@@ -61,7 +61,9 @@
 - **[Add task to list]**
 - **[Remove task from list]**
 - **[Edit saved tasks]**
-- **[Save to Local Storage]**
+- **[Delete all checked items]**
+- **[Drag tasks up and down the list]**
+- **[Local Storage]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
