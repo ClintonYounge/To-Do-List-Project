@@ -58,6 +58,10 @@
 - **[Correct set up of Linters and GitHub Flows.]**
 - **[Dynamic rendering of list elements inside the to-do list]**
 - **[List renders on page load]**
+- **[Add task to list]**
+- **[Remove task from list]**
+- **[Edit saved tasks]**
+- **[Save to Local Storage]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -115,7 +119,6 @@ Clone this repository to your desired folder:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **[Features allowing user to add a task]**
 - **[Features allowing user to remove all completed task]**
 - **[Features allowing user to edit tasks' description]**
 

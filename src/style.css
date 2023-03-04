@@ -1,83 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Mynerve&display=swap');
+
 * {
   box-sizing: border-box;
+  list-style: none;
   list-style-type: none;
   text-decoration: none;
+  font-family: 'Mynerve', cursive;
 }
 
 body {
   background-color: whitesmoke;
-  width: 100%;
 }
 
-.todo-card {
-  width: 80%;
+.container {
+  width: 70%;
   margin: auto;
   margin-top: 10%;
-  height: 60%;
-  background-color: white;
-  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid black;
+  padding: 0 5% 0 5%;
+  overflow: hidden;
 }
 
-ul {
-  justify-content: space-between;
-  width: 100%;
-}
-
-ul li {
+#task-list {
   display: flex;
-  width: 97%;
-  margin: auto;
-  margin-left: -2%;
-}
-
-.card-head {
-  width: 100%;
-  display: flex;
-}
-
-p {
-  padding-left: 4%;
-}
-
-.card-head p {
-  width: 80%;
-  font-size: 20px;
-  padding-top: 2%;
-}
-
-span {
-  width: 5%;
-  text-align: right;
-  margin-top: 2%;
-}
-
-.refresh {
-  margin-left: 14%;
-  margin-top: 5%;
-}
-
-.list-hr {
-  width: auto;
-  margin: auto;
+  flex-direction: column;
   margin-left: -40px;
 }
 
-.task-desc {
-  width: 100%;
+#task-list li {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  width: 120%;
+  margin: auto;
+  margin-left: -8%;
+  height: auto;
+  min-height: 40px;
+  border-top: 1px solid grey;
+  overflow: hidden;
+  padding-top: 10px;
 }
 
-.clear-completed {
-  font-size: 18px;
-  width: 80%;
-  margin: 2% auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
+#delete-checked-tasks-button {
+  width: 117.3%;
+  margin-left: -8.5%;
+  height: 40px;
+  font-size: 17px;
+  color: gray;
+}
+
+.task-desc {
+  margin: auto;
+  width: 100%;
+  margin-left: -1%;
+}
+
+input[type=text] {
+  width: 117.3%;
+  margin-left: -8.5%;
+  height: 40px;
+}
+
+input::placeholder {
+  font-style: italic;
+  font-size: 15px;
+}
+
+.checkboxes {
+  margin-right: 3%;
+}
+
+.delete-task-button {
+  height: 20px;
+  margin: auto;
+  margin-right: 5%;
   cursor: pointer;
 }
 
-.addTo {
-  font-style: italic;
-  opacity: 60%;
+h1 {
+  font-size: 20px;
+  margin-left: -7.5%;
+  display: flex;
+  width: 110%;
+  justify-content: space-between;
+}
+
+.edit-desc {
+  width: 80%;
+}
+
+.completed .task-desc {
+  text-decoration: line-through;
 }

@@ -9,17 +9,13 @@
     <script src="https://kit.fontawesome.com/2174a70124.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="todo-card">
-        <div class="card-head">
-            <p>Today's To Do</p>
-            <i class="fa-solid fa-arrows-rotate refresh"></i>
-        </div><hr>
-        <p class="addTo">Add to you list...</p><hr>
-        <ul id="task-list"></ul>
-        <div class="card-foot">
-            <p class="clear-completed">Clear All Completed</p>
-        </div>
-    </div>
-    
+  <div class="container">
+    <h1>Today's To Do <span><i class="fa-solid fa-arrows-rotate icon fa-2xs"></i></span></h1>
+    <form id="task-form">
+      <input type="text" id="new-task-input" placeholder="Add to your list...">
+    </form>
+    <ul id="task-list"></ul>
+    <button type="button" id="delete-checked-tasks-button">Clear all completed</button>
+  </div>
 </body>
 </html>
