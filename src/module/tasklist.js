@@ -1,5 +1,5 @@
 const taskList = document.querySelector('#task-list');
-const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
 // Save tasks to local storage
 function saveTasks() {
@@ -39,11 +39,6 @@ export function renderTasks() {
 
     deleteButton.addEventListener('click', () => {
       tasks.splice(index, 1);
-
-      // Update the indexes of all remaining tasks
-      for (let i = 0; i < tasks.length; i += 1) {
-        tasks[i].index = i + 1;
-      }
       saveTasks();
       renderTasks();
     });
@@ -61,6 +56,26 @@ export function renderTasks() {
         renderTasks();
       });
     });
+
+    // Add drag and drop functionality to each task item
+    taskItem.draggable = true;
+
+    taskItem.addEventListener('dragstart', (event) => {
+      event.dataTransfer.setData('text/plain', index);
+    });
+
+    taskItem.addEventListener('dragover', (event) => {
+      event.preventDefault();
+    });
+
+    taskItem.addEventListener('drop', (event) => {
+      const startIndex = parseInt(event.dataTransfer.getData('text/plain'), 10);
+      const endIndex = index;
+      const [removed] = tasks.splice(startIndex, 1);
+      tasks.splice(endIndex, 0, removed);
+      saveTasks();
+      renderTasks();
+    });
   });
 }
 
@@ -71,6 +86,13 @@ export function addTask(description) {
     completed: false,
     index: tasks.length + 1,
   });
+  saveTasks();
+  renderTasks();
+}
+
+// Delete all checked tasks
+export function deleteCheckedTasks() {
+  tasks = tasks.filter((task) => !task.completed);
   saveTasks();
   renderTasks();
 }
