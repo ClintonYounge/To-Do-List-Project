@@ -39,6 +39,11 @@ export function renderTasks() {
 
     deleteButton.addEventListener('click', () => {
       tasks.splice(index, 1);
+
+      // Update the indexes of all remaining tasks
+      for (let i = 0; i < tasks.length; i += 1) {
+        tasks[i].index = i + 1;
+      }
       saveTasks();
       renderTasks();
     });
@@ -64,7 +69,7 @@ export function addTask(description) {
   tasks.push({
     description,
     completed: false,
-    index: tasks.length,
+    index: tasks.length + 1,
   });
   saveTasks();
   renderTasks();
