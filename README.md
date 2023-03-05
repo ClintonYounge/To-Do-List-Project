@@ -69,7 +69,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- https://clintonyounge.github.io/To-Do-List-Project/
+- https://clintonyounge.github.io/To-Do-List-Project/dist/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
