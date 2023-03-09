@@ -2,7 +2,9 @@
  * @jest-environment jsdom
  */
 
-import { addTask, deleteTask } from '../src/module/task.js';
+import {
+  addTask, deleteTask,
+} from '../src/module/task.js';
 
 // Set up mock localStorage
 const localStorageMock = (() => {
