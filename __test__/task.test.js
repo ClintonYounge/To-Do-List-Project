@@ -2,35 +2,8 @@
  * @jest-environment jsdom
  */
 
-import { addTask, deleteTask } from '../src/module/task.js';
-// Mock the localStorage object
-const localStorageMock = (() => {
-  let store = {};
-  return {
-    getItem: (key) => store[key] || null,
-    setItem: (key, value) => {
-      store[key] = value.toString();
-    },
-    removeItem: (key) => {
-      delete store[key];
-    },
-    clear: () => {
-      store = {};
-    },
-  };
-})();
-Object.defineProperty(window, 'localStorage', { value: localStorageMock });
-// Mock the HTML elements
-document.body.innerHTML = `
-  <ul id="task-list">
-    <li>
-      <input type="checkbox" class="checkboxes">
-      <span class="task-desc">Task 1</span>
-      <span class="delete-task-button"><i class="fas fa-trash"></i></span>
-    </li>
-  </ul>
-`;
-const taskList = document.querySelector('#task-list');
+import { addTask, deleteTask, taskList } from '../src/module/task.js';
+
 // Tests for addTask function
 describe('addTask function', () => {
   test('should add a new task to the task list', () => {
@@ -47,11 +20,12 @@ describe('addTask function', () => {
 describe('deleteTask function', () => {
   test('should delete a task from the task list', () => {
     const deleteButton = taskList.children[0].querySelector('.delete-task-button');
-    deleteButton.click();
-    expect(taskList.children.length).toBe(2);
+    const taskItem = deleteButton.parentElement;
+    deleteTask(taskItem);
+    expect(taskList.children.length).toBe(1);
   });
   test('should not delete a task if the index is out of range', () => {
-    deleteTask(1);
-    expect(taskList.children.length).toBe(2);
+    deleteTask(taskList.children.length);
+    expect(taskList.children.length).toBe(1);
   });
 });
