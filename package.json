@@ -13,16 +13,22 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^27.0.6",
+    "@babel/cli": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.27.5",
     "hint": "^2.0.0",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.5.1",
+    "jsdom": "^21.1.0",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
     "stylelint-csstree-validator": "^1.9.0",
     "stylelint-scss": "^3.21.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1"
   }
 }
