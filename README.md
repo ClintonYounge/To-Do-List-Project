@@ -63,7 +63,10 @@
 - **[Edit saved tasks]**
 - **[Delete all checked items]**
 - **[Drag tasks up and down the list]**
+- **[Test for addTask function]**
+- **[Test for deleteTask function]**
 - **[Local Storage]**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -78,10 +81,6 @@
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
-
-- You don't need any previous installation in order to run this project
-
-
 ### Setup
 
 Clone this repository to your desired folder:
@@ -103,7 +102,7 @@ Clone this repository to your desired folder:
 
 ### Run tests
 
-- There's no test for this project
+- To run this test, run "npx jest" in your terminal.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -116,13 +115,18 @@ Clone this repository to your desired folder:
 - Linkedin: [@clinton-younge](https://www.linkedin.com/in/clinton-younge-83386a25a/)
 - Twitter: [@YoungeCjay](https://twitter.com/YoungeCjay)
 
+👤 **Therese Tuyisabe**
+
+- GitHub: [@githubhandle](https://github.com/theresetuyi)
+- Twitter: [@twitterhandle](https://twitter.com/THERESETUYISAB2)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/therese-theddy-tuyisabe-249820203/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **[Features allowing user to remove all completed task]**
-- **[Features allowing user to edit tasks' description]**
+- **[Test for edit tasks function' description]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
