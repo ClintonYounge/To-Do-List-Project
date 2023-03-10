@@ -82,18 +82,10 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 run the following code in you terminal:
+- npm install 
 
-- Install Jest
-    npm install --save-dev jest
+That's installs all the dependencies you need before you run
 
-- Install Jest JSDOM
-    npm install --save-dev jest jsdom
-
-- Install Babel
-    npm install --save-dev @babel/cli @babel/preset-env
-    npm install --save @babel/polyfill
-
-That's all you should preinstall before you run
 ### Setup
 
 Clone this repository to your desired folder:
