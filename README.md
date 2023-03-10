@@ -65,6 +65,9 @@
 - **[Drag tasks up and down the list]**
 - **[Test for addTask function]**
 - **[Test for deleteTask function]**
+- **[Test for editTask function]**
+- **[Test for updateTaskStatus function]**
+- **[Test for deleteCheckedTasks function]**
 - **[Local Storage]**
 
 
