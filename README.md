@@ -84,6 +84,10 @@
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
+run the following code in you terminal:
+- npm install 
+
+That's installs all the dependencies you need before you run
 
 ### Setup
 
