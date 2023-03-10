@@ -1,3 +1,5 @@
+// tasklist.js
+
 const taskList = document.querySelector('#task-list');
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
@@ -38,9 +40,8 @@ export function renderTasks() {
     });
 
     deleteButton.addEventListener('click', () => {
-      tasks.splice(index, 1);
-      saveTasks();
-      renderTasks();
+      // eslint-disable-next-line no-use-before-define
+      deleteTask(index);
     });
 
     taskDescription.addEventListener('dblclick', () => {
@@ -86,6 +87,13 @@ export function addTask(description) {
     completed: false,
     index: tasks.length + 1,
   });
+  saveTasks();
+  renderTasks();
+}
+
+// Delete a task from the list
+export function deleteTask(index) {
+  tasks.splice(index, 1);
   saveTasks();
   renderTasks();
 }
