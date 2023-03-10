@@ -65,6 +65,9 @@
 - **[Drag tasks up and down the list]**
 - **[Test for addTask function]**
 - **[Test for deleteTask function]**
+- **[Test for editTask function]**
+- **[Test for updateTaskStatus function]**
+- **[Test for deleteCheckedTasks function]**
 - **[Local Storage]**
 
 
@@ -97,7 +100,7 @@ Clone this repository to your desired folder:
 
 ### Install
 
-- This is not an installable project
+- run npm install to install all dependencies
 
 
 ### Usage

@@ -2,7 +2,9 @@
  * @jest-environment jsdom
  */
 
-import { addTask, deleteTask } from '../src/module/task.js';
+import {
+  addTask, deleteTask, editTask, updateTaskStatus, deleteCheckedTasks,
+} from '../src/module/task.js';
 
 // Set up mock localStorage
 const localStorageMock = (() => {
@@ -62,5 +64,54 @@ describe('deleteTask function', () => {
 
   test('should not throw an error if the specified task does not exist', () => {
     expect(() => deleteTask('task-2')).not.toThrow();
+  });
+}); describe('editTask function', () => {
+  beforeEach(() => {
+    localStorage.clear();
+    localStorage.setItem('taskCount', '2');
+    localStorage.setItem('task-0', 'Task 1');
+    localStorage.setItem('task-1', 'Task 2');
+  });
+  test('should update the description of an existing task', () => {
+    editTask('task-1', 'New description');
+    expect(localStorage.getItem('task-1')).toBe('New description');
+  });
+  test('should not update the description of a non-existent task', () => {
+    editTask('task-2', 'New description');
+    expect(localStorage.getItem('task-2')).toBeNull();
+  });
+});
+// Tests for updateTaskStatus function
+describe('updateTaskStatus function', () => {
+  beforeEach(() => {
+    localStorage.clear();
+    localStorage.setItem('taskCount', '2');
+    localStorage.setItem('task-0', JSON.stringify({ description: 'Task 1', completed: false }));
+    localStorage.setItem('task-1', JSON.stringify({ description: 'Task 2', completed: false }));
+  });
+  test('should update the completed status of an existing task', () => {
+    updateTaskStatus('task-1', true);
+    expect(JSON.parse(localStorage.getItem('task-1')).completed).toBe(true);
+    updateTaskStatus('task-1', false);
+    expect(JSON.parse(localStorage.getItem('task-1')).completed).toBe(false);
+  });
+  test('should not throw an error if the specified task does not exist', () => {
+    expect(() => updateTaskStatus('task-2', true)).not.toThrow();
+  });
+});
+describe('deleteCheckedTasks function', () => {
+  beforeEach(() => {
+    localStorage.clear();
+    localStorage.setItem('taskCount', '3');
+    localStorage.setItem('task-0', JSON.stringify({ description: 'Task 1', completed: false }));
+    localStorage.setItem('task-1', JSON.stringify({ description: 'Task 2', completed: true }));
+    localStorage.setItem('task-2', JSON.stringify({ description: 'Task 3', completed: true }));
+  });
+  test('should delete checked tasks from localStorage', () => {
+    deleteCheckedTasks();
+    expect(localStorage.getItem('taskCount')).toBe('1');
+    expect(JSON.parse(localStorage.getItem('task-0')).description).toBe('Task 1');
+    expect(localStorage.getItem('task-1')).toBeNull();
+    expect(localStorage.getItem('task-2')).toBeNull();
   });
 });
